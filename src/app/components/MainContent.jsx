@@ -10,7 +10,7 @@ import RecentActivity from "./RecentActivity";
 import Navbar from "./Navbar";
 import CampaignModal from "./CampaignModal";
 
-const MainContent = () => {
+const MainContent = ({campaigns}) => {
   const [isCampaignModalOpen, setCampaignModalOpen] = useState(false);
   return (
     <div className="flex-1 p-6 space-y-6">
@@ -23,7 +23,7 @@ const MainContent = () => {
 
       {/* Stats */}
       <div className="grid grid-cols-4 gap-4">
-        <StatsCard title="Emails Sent" value="12,340" percent="+8%" icon="📨" />
+        <StatsCard title="Total Campaigns" value={campaigns.length} percent="+8%" icon="📨" />
         <StatsCard title="Replies" value="1,240" percent="+12%" icon="💬" />
         <StatsCard
           title="Meetings Booked"

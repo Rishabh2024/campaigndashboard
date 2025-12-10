@@ -1,8 +1,8 @@
 import React from "react";
 
 async function getCampaigns() {
-  const res = await fetch("http://localhost:3000/api/getcampaign", {
-    cache: "no-store", // ensures fresh data every time (SSR)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/getcampaign`, {
+    cache: "no-store", 
   });
 
   if (!res.ok) {
